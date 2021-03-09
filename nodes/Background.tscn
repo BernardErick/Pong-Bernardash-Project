@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/Images/background3.1.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 450, 10 )
+
+[node name="Background" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+offset = Vector2( 450, 300 )
+
+[node name="TopWall" type="StaticBody2D" parent="." groups=[
+"Wall",
+]]
+position = Vector2( 450, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall"]
+shape = SubResource( 1 )
+
+[node name="BottomWall" type="StaticBody2D" parent="." groups=[
+"Wall",
+]]
+position = Vector2( 450, 600 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomWall"]
+shape = SubResource( 1 )
